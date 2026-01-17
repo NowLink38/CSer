@@ -40,7 +40,7 @@ def radio_player_html(radio_name):
     justify-content: center;
   }
 </style></head><body style="background-color:black;">
-    <h3>{radio_name.title()}</h3>
+    <h3 style="color: white;">{radio_name.title()}</h3>
     <audio id="player" controls autoplay></audio>
     <script>
     const player = document.getElementById('player');
