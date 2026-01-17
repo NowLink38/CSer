@@ -27,12 +27,13 @@ record_radio() {
   done
 }
 
-# Run the radio functions in background correctly
+# Start radio recordings in background
 record_radio capb "http://media-ice.musicradio.com/CapitalBirmingham" &
 record_radio hrtw "http://media-ssl.musicradio.com/HeartWestMids" &
 record_radio htsb "http://stream-al.hellorayo.co.uk/freebirmingham.aac?aw_0_1st.skey=1602676850" &
 
-# Start Flask web server last
+# Start Flask web server last (Render requires binding to $PORT)
 export PORT=${PORT:-10000}
 echo "Starting web server on port $PORT..."
 python server.py
+
