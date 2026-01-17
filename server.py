@@ -27,6 +27,7 @@ def index():
 # Route: play a radio seamlessly
 def radio_player_html(radio_name):
     return f"""
+<html><head></head><body style="background-color:black;">
     <h3>{radio_name.title()}</h3>
     <audio id="player" controls autoplay></audio>
     <script>
@@ -54,6 +55,7 @@ def radio_player_html(radio_name):
     // Initial load
     checkSegment();
     </script>
+    </body></html>
     """
 
 @app.route("/capb")
