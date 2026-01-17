@@ -3,7 +3,7 @@ set -e
 
 mkdir -p capb hrtw htsb
 
-record_radio () {
+record_radio() {
   NAME=$1
   URL=$2
 
@@ -27,12 +27,12 @@ record_radio () {
   done
 }
 
-# Start recording in background
+# Run the radio functions in background correctly
 record_radio capb "http://media-ice.musicradio.com/CapitalBirmingham" &
 record_radio hrtw "http://media-ssl.musicradio.com/HeartWestMids" &
-record_radio htsb "http://stream-al.hellorayo.co.uk/freebirmingham.aac?aw_0_1st.skey=1602676850" & &
+record_radio htsb "http://stream-al.hellorayo.co.uk/freebirmingham.aac?aw_0_1st.skey=1602676850" &
 
-# Start Flask web server **last**, bind to Render's port
+# Start Flask web server last
 export PORT=${PORT:-10000}
 echo "Starting web server on port $PORT..."
 python server.py
