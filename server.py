@@ -27,7 +27,19 @@ def index():
 # Route: play a radio seamlessly
 def radio_player_html(radio_name):
     return f"""
-<html><head></head><body style="background-color:black;">
+<html><head><style>
+  audio {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  body {
+    margin: 0;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+  }
+</style></head><body style="background-color:black;">
     <h3>{radio_name.title()}</h3>
     <audio id="player" controls autoplay></audio>
     <script>
