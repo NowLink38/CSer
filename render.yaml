@@ -3,4 +3,3 @@ services:
     name: radio-recorder
     env: docker
     plan: free
-    startCommand: ./start.sh
