@@ -1,5 +1,5 @@
 services:
-  - type: worker
+  - type: web
     name: radio-recorder
     env: python
     plan: free
