@@ -9,7 +9,6 @@ record_radio () {
 
   while true; do
     echo "Starting $NAME..."
-
     ffmpeg -loglevel error \
       -reconnect 1 \
       -reconnect_streamed 1 \
@@ -23,15 +22,17 @@ record_radio () {
       -segment_wrap 3 \
       -reset_timestamps 1 \
       "$NAME/seg%d.mp3"
-
     echo "$NAME crashed, restarting in 5s..."
     sleep 5
   done
 }
 
+# Start recording in background
 record_radio capb "http://media-ice.musicradio.com/CapitalBirmingham" &
 record_radio hrtw "http://media-ssl.musicradio.com/HeartWestMids" &
-record_radio htsb "http://stream-al.hellorayo.co.uk/freebirmingham.aac?aw_0_1st.skey=1602676850" &
+record_radio htsb "http://stream-al.hellorayo.co.uk/freebirmingham.aac?aw_0_1st.skey=1602676850" & &
 
-echo "Starting web server..."
+# Start Flask web server **last**, bind to Render's port
+export PORT=${PORT:-10000}
+echo "Starting web server on port $PORT..."
 python server.py
