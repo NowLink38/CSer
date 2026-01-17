@@ -15,11 +15,11 @@ def latest_segment(radio_name):
 @app.route("/")
 def index():
     return """
-    <ul>
-        <li><a href="/capb">capb</a></li>
-        <li><a href="/hrtw">hrtw</a></li>
-        <li><a href="/htsb">htsb</a></li>
-    </ul>
+<p style="font-size: 10vw;"><a href="/capb">capb</a></p>
+<br>
+<p style="font-size: 10vw;"><a href="/hrtw">hrtw</a></p>
+<br>
+<p style="font-size: 10vw;"><a href="/htsb">htsb</a></p>
     """
 
 # Route: play a radio seamlessly
