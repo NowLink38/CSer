@@ -32,3 +32,6 @@ record_radio () {
 record_radio capb "http://media-ice.musicradio.com/CapitalBirmingham" &
 record_radio hrtw "http://media-ssl.musicradio.com/HeartWestMids" &
 record_radio htsb "http://stream-al.hellorayo.co.uk/freebirmingham.aac?aw_0_1st.skey=1602676850" &
+
+echo "Starting web server..."
+python server.py
