@@ -28,9 +28,7 @@ def audio_html(radio_name):
 def index():
     return """
     <ul>
-        <li><a href="/capb">capb</a></li>
-        <li><a href="/hrtw">hrtw</a></li>
-        <li><a href="/htsb">htsb</a></li>
+        <p>Running</p>
     </ul>
     """
 
