@@ -13,7 +13,7 @@ def index():
     </ul>
     """
 
-@app.route("/radio1")
+@app.route("/capb")
 def r1():
     return """
     <audio controls autoplay>
@@ -21,7 +21,7 @@ def r1():
     </audio>
     """
 
-@app.route("/radio2")
+@app.route("/hrtw")
 def r2():
     return """
     <audio controls autoplay>
@@ -29,7 +29,7 @@ def r2():
     </audio>
     """
 
-@app.route("/radio3")
+@app.route("/htsw")
 def r3():
     return """
     <audio controls autoplay>
