@@ -27,7 +27,6 @@ def audio_html(radio_name):
 @app.route("/")
 def index():
     return """
-    <h2>Radio Recordings</h2>
     <ul>
         <li><a href="/capb">capb</a></li>
         <li><a href="/hrtw">hrtw</a></li>
